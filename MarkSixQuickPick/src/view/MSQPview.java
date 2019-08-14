@@ -187,7 +187,7 @@ public class MSQPview extends JFrame {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
-					configTableFontSize(10, 11);
+					configTableFontSize(10, 10);
 					myEntryColumnWidth = 42;
 					setEntryColumnWidth(myEntryColumnWidth);
 				}
@@ -199,7 +199,7 @@ public class MSQPview extends JFrame {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
-					configTableFontSize(13, 14);
+					configTableFontSize(13, 13);
 					myEntryColumnWidth = 52;
 					setEntryColumnWidth(myEntryColumnWidth);
 				}
@@ -211,7 +211,7 @@ public class MSQPview extends JFrame {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
-					configTableFontSize(15, 16);
+					configTableFontSize(14, 14);
 					myEntryColumnWidth = 60;
 					setEntryColumnWidth(myEntryColumnWidth);
 				}
@@ -342,7 +342,7 @@ public class MSQPview extends JFrame {
 		JLabel setting = new JLabel("<html><u>Settings</u></html>");
 		setting.setHorizontalAlignment(SwingConstants.CENTER);
 		setting.setBorder(BorderFactory.createEmptyBorder(-5, 0, 0, 0));
-		setting.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 15));
+		setting.setFont(new Font("Tahoma", Font.BOLD, 15));
 		options.add(setting);
 
 		options.add(createSubHeader("Type of Entry:"));
@@ -371,7 +371,7 @@ public class MSQPview extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 
-		configTableFontSize(13, 14);
+		configTableFontSize(13, 13);
 		myTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
 		panel.add(myScrollPane, BorderLayout.CENTER);
@@ -403,14 +403,14 @@ public class MSQPview extends JFrame {
 				}
 			}
 
-			tableColumn.setMinWidth(preferredWidth);
-			tableColumn.setPreferredWidth(preferredWidth);
+			tableColumn.setMinWidth(preferredWidth + 10);
+			tableColumn.setPreferredWidth(preferredWidth + 10);
 		}
 	}
 
 	private void configTableFontSize(int theHeaderSize, int theTextSize) {
-		myTable.getTableHeader().setFont(new Font(Font.SANS_SERIF, Font.PLAIN, theHeaderSize));
-		myTable.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, theTextSize));
+		myTable.getTableHeader().setFont(new Font("Tahoma", Font.PLAIN, theHeaderSize));
+		myTable.setFont(new Font("Tahoma", Font.PLAIN, theTextSize));
 		if (myTableModel != null) {
 			updateTableModel();
 		}
@@ -431,7 +431,7 @@ public class MSQPview extends JFrame {
 
 	private JLabel createSubHeader(String theText) {
 		JLabel label = new JLabel(theText);
-		label.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
+		label.setFont(new Font("Tahoma", Font.BOLD, 13));
 
 		return label;
 	}

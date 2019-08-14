@@ -19,18 +19,18 @@ public class MSQP {
 		if (getOS().startsWith("mac")) {
 			System.setProperty("apple.awt.application.name", "Mark Six Quick Pick");
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
+		} else {
+			try {
+				UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+			} catch (ClassNotFoundException | IllegalAccessException | InstantiationException
+					| UnsupportedLookAndFeelException e) {
+				e.printStackTrace();
+			}
 		}
 
 		MSQPmodel model = new MSQPmodel(1, 49);
 		MSQPview view = new MSQPview();
 		MSQPcontroller controller = new MSQPcontroller(model, view);
-
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (ClassNotFoundException | IllegalAccessException | InstantiationException
-				| UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
-		}
 
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
