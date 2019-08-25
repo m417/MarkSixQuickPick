@@ -95,7 +95,7 @@ public class MSQPview extends JFrame {
 		myTotalSelections = new JComboBox<>();
 		myNumOfEntries = new JComboBox<>();
 		myAmount = 0;
-		myEntryColumnWidth = 52;
+		myEntryColumnWidth = 49;
 		myInvestment = new JLabel("Investment per entry: $" + DF.format(myAmount));
 		setPreferredSize(myFrameSize);
 		setMinimumSize(myFrameSize);
@@ -188,7 +188,7 @@ public class MSQPview extends JFrame {
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
 					configTableFontSize(10, 10);
-					myEntryColumnWidth = 42;
+					myEntryColumnWidth = 41;
 					setEntryColumnWidth(myEntryColumnWidth);
 				}
 			}
@@ -200,7 +200,7 @@ public class MSQPview extends JFrame {
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
 					configTableFontSize(13, 13);
-					myEntryColumnWidth = 52;
+					myEntryColumnWidth = 49;
 					setEntryColumnWidth(myEntryColumnWidth);
 				}
 			}
@@ -212,7 +212,7 @@ public class MSQPview extends JFrame {
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange() == ItemEvent.SELECTED) {
 					configTableFontSize(14, 14);
-					myEntryColumnWidth = 60;
+					myEntryColumnWidth = 54;
 					setEntryColumnWidth(myEntryColumnWidth);
 				}
 			}
